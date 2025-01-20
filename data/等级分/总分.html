@@ -1,0 +1,1991 @@
+<script type="text/javascript" src="/tqms/js/jquery/echarts.js"></script>
+
+<div class="echarts" style="width: 100%">
+  <div id="one" style="width: 100%">
+    <p></p>
+    <div
+      id="overall_situation0"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1759"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1760"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1761"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1762"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1763"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1764"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1765"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1766"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+
+    <p></p>
+    <div
+      id="overall_situation1767"
+      style="height: 420px; width: 60%; margin: 0 auto"
+    ></div>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var schoolName = "北师大二附中未来科技城学校";
+    var schoolOrderNo = "13";
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation0"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 总分 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 87.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [48.23, 558.984695166964],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [50.82, 580.591258995656],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [50.29, 514.151515345],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [53.54, 435.522387199366],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [54.97, 438.579310946897],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [62.8, 371.095888753356],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [63.78, 409.664235278102],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [53.71, 465.67586468731],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [55.07, 505.932430867297],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [47.47, 488.124404635263],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [48.23, 558.984695166964],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [50.82, 580.591258995656],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [44.99, 503.848779693805],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 497.253466204506, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 82.17, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1759"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 语文 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 18.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [8.08, 103.351898999089],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [9.58, 105.829516549008],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [8.82, 98.7149998728],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [9.94, 89.062283585606],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [11.63, 86.212903103226],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [13.82, 79.052910287619],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [12.4, 86.799999727714],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [10.48, 94.601307055686],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [9.93, 95.065789608947],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [8.43, 95.261904481714],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [8.08, 103.351898999089],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [9.58, 105.829516549008],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [9.47, 96.933333628],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 95.607053949909, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 12.84, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1760"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 数学 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 32.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [13.49, 109.959493261392],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [14.13, 112.898219958015],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [18.31, 93.014998775],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [24.52, 74.930795438581],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [22.99, 75.402598069805],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [26.29, 46.750000864362],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [27.11, 67.478873998239],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [22.23, 79.450979911765],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [23.05, 88.415582701299],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [18.38, 91.914285775],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [13.49, 109.959493261392],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [14.13, 112.898219958015],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [16.84, 93.516587902844],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 89.569651801928, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 27.75, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1761"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 英语 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 30.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [16.63, 110.681933862519],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [16.31, 119.956742463461],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [19.0, 101.37878831702],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [19.79, 79.868131575385],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [20.69, 81.671233731712],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [20.8, 59.227544119701],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [21.25, 69.992805974173],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [19.52, 90.253423759658],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [19.98, 101.466665767867],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [18.78, 92.813397154593],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [16.63, 110.681933862519],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [16.31, 119.956742463461],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [16.4, 99.298076467788],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 95.824882632424, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 25.69, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1762"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 物理 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 16.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [8.0, 74.493726051841],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [9.82, 77.390246304878],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [8.91, 70.323079075846],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [7.57, 54.836735986667],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [7.96, 60.263160510526],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [11.23, 53.323529455588],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [8.13, 55.120001735],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [8.95, 63.409092398333],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [8.95, 72.153848715897],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [10.08, 64.2954568725],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [8.0, 74.493726051841],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [9.82, 77.390246304878],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [7.89, 64.200002642476],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 67.691568359414, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 11.99, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1763"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 化学 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 16.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [9.0, 76.251166280744],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [7.79, 77.776319340526],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [8.82, 68.245286188679],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [8.22, 58.940301305075],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [8.04, 59.935486708387],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [9.12, 56.5000027],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [8.97, 57.785717037143],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [9.29, 61.450002898],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [8.86, 68.628574613714],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [7.98, 66.419357935484],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [9.0, 76.251166280744],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [7.79, 77.776319340526],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [7.36, 65.56757063027],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 68.166250018035, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 11.31, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1764"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 生物 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 16.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [8.59, 77.789773001136],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [8.5, 77.700000193333],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [7.93, 74.261364118182],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [7.63, 60.939393151515],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [6.23, 59.19999919],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [7.93, 53.595745578723],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [6.24, 54.470589076471],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [7.81, 64.792451973585],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [9.06, 71.272726818182],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [7.29, 66.34146217561],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [8.59, 77.789773001136],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [8.5, 77.700000193333],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [7.86, 69.249998946875],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 69.679039126856, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 11.4, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1765"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 政治 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 16.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [8.11, 79.338711329032],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [8.22, 83.584271029213],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [7.43, 78.084211765895],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [9.34, 67.865031813497],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [9.48, 63.724491075918],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [8.51, 58.75000176],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [7.75, 64.115385710769],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [8.2, 67.214287229388],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [8.39, 74.545455709091],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [8.14, 74.5600014336],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [8.11, 79.338711329032],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [8.22, 83.584271029213],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [7.9, 74.457945456449],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 71.943339847351, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 11.52, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1766"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 历史 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 16.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [8.89, 79.720000576667],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [8.99, 83.252747925824],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [8.24, 75.88000078],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [8.66, 64.119048011905],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [9.93, 68.833333680556],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [8.32, 59.02197810989],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [8.83, 62.584270002809],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [9.04, 68.157142535714],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [8.67, 73.2045468125],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [8.97, 71.7093035],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [8.89, 79.720000576667],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [8.99, 83.252747925824],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [8.91, 72.163462466346],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 71.978320344399, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 11.75, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var gauge = echarts.init(document.getElementById("overall_situation1767"));
+    // 3.更新图表myChart的数据
+    gauge_option = {
+      //下载
+      toolbox: {
+        //show: true,
+        itemSize: 20,
+        itemGap: 30,
+        right: 50,
+        feature: {
+          // dataView: {show:true},
+          saveAsImage: {
+            //excludeComponents :['toolbox'],
+            pixelRatio: 2,
+          },
+        },
+      },
+      title: { text: "高三 地理 M-S图", x: "center" },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+          var res = params[0].data.schoolName; //可以在这个方法中做改变
+          /*  console.log("schoolName:"+schoolName); */
+          if (schoolName != null && schoolName != "") {
+            res = params[0].data.name;
+          }
+          return res;
+        },
+      },
+      xAxis: {
+        name: "标准差",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        max: 17.0,
+      },
+      yAxis: {
+        name: "标\n准\n平\n均\n分",
+        scale: true,
+        nameLocation: "center",
+        nameGap: 40,
+        nameRotate: 1,
+      },
+      series: [
+        {
+          color: "#3CB371",
+          symbolSize: 22,
+          itemStyle: {
+            normal: {
+              opacity: 0.7,
+              color: "#3CB371",
+              // shadowBlur: 10,
+              // shadowColor: 'rgba(120, 36, 50, 0.5)',
+              // shadowOffsetY: 5,
+              //此处起作用，展示你需要的标签
+              label: {
+                show: true,
+                color: "#000000",
+                /*  fontWeight:'bolder', */
+                formatter: (param) => {
+                  var name = param.name;
+                  if (schoolName != null && schoolOrderNo == param.name) {
+                    name = schoolName;
+                  }
+                  return name;
+                },
+                // position: 'center'
+              },
+            },
+          },
+          data: [
+            {
+              value: [7.77, 83.216588725576],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [8.18, 84.856286739641],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [8.12, 77.330188053019],
+              name: "14",
+              schoolName: "首师大附属回龙观育新学校",
+            },
+            {
+              value: [8.55, 64.942408122304],
+              name: "15",
+              schoolName: "首都师范大学附中昌平学校",
+            },
+            {
+              value: [10.14, 66.836955822391],
+              name: "16",
+              schoolName: "北京十五中南口学校",
+            },
+            {
+              value: [8.01, 58.705882547143],
+              name: "17",
+              schoolName: "中国政法大学附属学校",
+            },
+            {
+              value: [8.99, 61.911764064216],
+              name: "18",
+              schoolName: "北京市昌平区实验学校",
+            },
+            {
+              value: [8.94, 67.14423000125],
+              name: "19",
+              schoolName: "北京市一六一中学回龙观学校",
+            },
+            {
+              value: [8.61, 74.21276463766],
+              name: "289",
+              schoolName: "北京师范大学昌平附属学校",
+            },
+            {
+              value: [8.13, 73.820754544717],
+              name: "20",
+              schoolName: "清华大学附属中学昌平学校",
+            },
+            {
+              value: [7.77, 83.216588725576],
+              name: "10",
+              schoolName: "北京市昌平区第一中学",
+            },
+            {
+              value: [8.18, 84.856286739641],
+              name: "11",
+              schoolName: "北京市昌平区第二中学",
+            },
+            {
+              value: [7.92, 78.059700922687],
+              name: "13",
+              schoolName: "北师大二附中未来科技城学校",
+              itemStyle: { normal: { color: "#FF00CC" } },
+            },
+          ],
+          type: "scatter",
+
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                yAxis: 72.950179913899, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+        {
+          data: [],
+          type: "line",
+          markLine: {
+            symbol: "none", //去掉警戒线最后面的箭头
+            label: {
+              position: "start", //将警示值放在哪个位置，三个值“start”,"middle","end"  开始  中点 结束
+            },
+            data: [
+              {
+                silent: false, //鼠标悬停事件  true没有，false有
+                lineStyle: {
+                  //警戒线的样式  ，虚实  颜色
+                  type: "solid",
+                  color: "#FA3934",
+                  normal: { width: 2, type: "solid", color: "red" },
+                },
+                xAxis: 12.17, // 警戒线的标注值，可以有多个yAxis,多条警示线   或者采用   {type : 'average', name: '平均值'}，type值有  max  min  average，分为最大，最小，平均值
+              },
+            ],
+          },
+        },
+      ],
+    };
+
+    gauge.setOption(gauge_option);
+  };
+</script>
